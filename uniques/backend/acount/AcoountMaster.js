@@ -10,9 +10,6 @@ const secretKey = "9998abc";
 // Acoount creation
 router.post("/create", async (req, res) => {
   const { username, email, password } = req.body;
- 
-
-
 
   var npassword = password + secretKey;
   const SecurePass = CryptoJS.SHA256(npassword).toString(CryptoJS.enc.Hex);
@@ -59,9 +56,9 @@ router.post("/login", async (req, res) => {
   var password = req.body.password;
   var npassword = password + secretKey;
   const SecurePass = CryptoJS.SHA256(npassword).toString(CryptoJS.enc.Hex);
-  if (email && email.trim() !== '') {
+  if (email && email.trim() !== "") {
     console.log("email");
-   
+
     const q = `SELECT * FROM users WHERE Email = '${email}' AND Pswd = '${SecurePass}'`;
 
     db.query(q, (err, data) => {
