@@ -1,7 +1,7 @@
 var express = require("express");
 const cors = require("cors");
 const data = require("./featching/Datamaster.js");
-//import express from 'express'
+
 var midusers = require("./acount/AcoountMaster.js");
 const cookieSession = require("cookie-session");
 const passportsetup = require("passport");
