@@ -26,19 +26,10 @@ function Login() {
       setres(res.data);
     } catch (err) {
       if (err.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log("Error Response Data:", err.response.data);
-        console.log("Error Response Status:", err.response.status);
-        console.log("Error Response Headers:", err.response.headers);
-
-        // Set the error response to the state
         setres(err.response.data);
       } else if (err.request) {
-        // The request was made but no response was received
         console.log("Error Request Data:", err.request);
       } else {
-        // Something happened in setting up the request that triggered an Error
         console.log("Error Message:", err.message);
       }
     }
